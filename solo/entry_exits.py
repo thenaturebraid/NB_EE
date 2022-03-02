@@ -809,7 +809,7 @@ def function(outputFolder, studyMask, streamNetwork, facRaster, fdrRaster):
         # Dissolve watersheds poly
         arcpy.Dissolve_management(watershedsPoly, watershedsFC, "STREAM_NO")
 
-        return entryExitPoints, streamNetworkFC
+        return entryExitPoints, streamNetworkFC, watershedsFC
 
     except Exception:
         log.error("Critical exit point operations did not complete successfully")

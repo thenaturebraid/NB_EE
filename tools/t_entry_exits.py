@@ -27,7 +27,7 @@ def function(params):
         log.setupLogging(outputFolder)
 
         # Call Entry Exits function
-        entryExitPoints, streamNetworkFC = entry_exits.function(outputFolder, studyMask, streamNetwork, facRaster, fdrRaster)
+        entryExitPoints, streamNetworkFC, watershedsFC = entry_exits.function(outputFolder, studyMask, streamNetwork, facRaster, fdrRaster)
         
         # Set outputs
         if entryExitPoints is not None:
@@ -35,6 +35,7 @@ def function(params):
 
         arcpy.SetParameter(7, streamNetworkFC)
         arcpy.SetParameter(8, studyMask)
+        arcpy.SetParameter(9, watershedsFC)
 
         arcpy.SetParameter(0, True)
         log.info("Entry/exits operations completed successfully")

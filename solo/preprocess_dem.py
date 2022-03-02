@@ -178,7 +178,7 @@ def function(outputFolder, DEM, studyAreaMask, streamInput, minAccThresh, majAcc
                 outNBstream = Reclassify(streamAccHaFile, "VALUE", reclassifyRanges)
                 outNBstream.save(streamInvRas)
                 del outNBstream
-                log.info("Stream raster for input to NB created")
+                log.info("Stream raster for input to the Nature Braid created")
 
                 # Create stream file for display
                 reclassifyRanges = RemapRange([[0, float(minAccThresh), "NODATA"],
@@ -222,7 +222,7 @@ def function(outputFolder, DEM, studyAreaMask, streamInput, minAccThresh, majAcc
             try:
                 # Generate pyramids and stats
                 arcpy.BuildPyramidsandStatistics_management(outputFolder, "", "", "", "")
-                log.info("Pyramids and Statistics calculated for all NB topographical information rasters")
+                log.info("Pyramids and Statistics calculated for all the Nature Braid topographical information rasters")
 
             except Exception:
                 log.info("Warning - could not generate all raster statistics")
